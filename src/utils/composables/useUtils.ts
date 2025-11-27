@@ -27,9 +27,8 @@ export default function useUtils() {
 
   const getStore = (key: string) => {
     try {
-      const saved = localStorage.getItem(key)
-      if (saved) {
-        const store = JSON.parse(saved)
+      if (localStorage.has(key)) {
+        const store = JSON.parse(localStorage.getItem(key)!)
         return isObject(store) ? store : {}
       }
     }
