@@ -1,0 +1,15 @@
+<route lang="yaml">
+name: reload
+</route>
+
+<template>
+  <div />
+</template>
+
+<script setup lang="ts">
+const router = useRouter()
+
+onMounted(() => {
+  router.go(-1)
+})
+</script>
